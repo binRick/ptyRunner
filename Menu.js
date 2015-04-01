@@ -2,7 +2,14 @@ var Menu = require('terminal-menu');
 var menu = Menu({
     width: 29,
     x: 4,
-    y: 2
+    y: 2,
+bg: 'white',
+bg: 'green',
+fg: 'white',
+fg: 'black',
+selected: 6,
+
+
 });
 _ = require('underscore'),
     child = require('child_process'),
@@ -29,4 +36,3 @@ menu.on('close', function() {
     process.stdin.setRawMode(false);
     process.stdin.end();
 });
-//   };
