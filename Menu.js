@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var Menu = require('terminal-menu');
 var menu = Menu({
     width: 29,
