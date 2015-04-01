@@ -13,10 +13,13 @@
     "chalk": "^1.0.0",
     "child_pty": "^1.0.0",
     "inotifywait": "^1.7.0",
+    "json2yaml": "^1.0.3",
     "monitor-pid": "^1.4.3",
+    "node-ansible": "^0.3.0",
     "prettyjson": "^1.1.0",
     "ps-tree": "0.0.3",
     "pty.js": "^0.2.7",
+    "terminal-menu": "^2.1.1",
     "underscore": "^1.8.2"
   },
   "devDependencies": {},

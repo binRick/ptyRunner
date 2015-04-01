@@ -1,4 +1,18 @@
+var fs = require('fs'),
+    j2y = require('json2yaml');
+
+
 module.exports = {
+    Host: '127.0.0.1',
+    Verbose: 'vv',
+    Variables: {
+        somethingCool: 12354,
+    },
+    Playbooks: {
+        Install: j2y.stringify(JSON.parse(fs.readFileSync('./_SteamServer_Install.json').toString())),
+        Test: j2y.stringify(JSON.parse(fs.readFileSync('./_Test.json').toString())),
+    },
+    Inventory: ['127.0.0.1', 'steam1', 'steam2'],
     Shell: 'bash',
     Columns: 80,
     Rows: 30,
@@ -23,8 +37,9 @@ module.exports = {
     User: 'arma3server',
     Home: '/home/arma3server',
     Commands: {
-        npm: ['git clone https://github.com/yaronn/blessed-contrib', 'cd blessed-control', 'npm install'],
-        Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server validate', 'history', 'ls', 'exit'],
+        test: ['echo hello', 'id', 'ls', 'w'],
+        npm: ['/usr/bin/git clone https://github.com/yaronn/blessed-contrib', 'cd blessed-control', 'npm install'],
+        Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server install', 'history', 'ls', 'exit'],
         Start: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server start'],
         Help: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server'],
         Details: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server details'],
