@@ -22,7 +22,6 @@ var child = pty.spawn('setuidgid', [Setup.User, Setup.Shell], {
 Setup.Pid = child.pid;
 Monitor(Setup);
 
-
 //console.log(c.green('\nApplication Config:'));
 //console.log(pj.render(Setup));
 console.log(c.green('Running', Command, ' Commands'));
