@@ -16,22 +16,22 @@ module.exports = {
     Killed: function(reason, ptyObject) {
         console.log('killed w reason', reason, ptyObject);
     },
-Ended: function(e){
+    Ended: function(e) {
 
-},
+    },
     Prompt: '[y/N]',
     User: 'arma3server',
     Home: '/home/arma3server',
-Commands: {
-    Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server validate','history','ls','exit'],
-    //Install: ['cd ~','source .bashrc','source .bash_profile','free -m','grep -i hz /proc/cpuinfo','df -h','uname -a','sar -u | tail -n 2','sleep 5','cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server','history','ls','exit'],
-    Start: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server start'],
-    Help: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server'],
-    Details: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server details'],
-    Validate: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server validate'],
-    Stop: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server stop'],
-    Start: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server start'],
-    Restart: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server restart'],
-    Update: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server update'],
-},
+    Commands: {
+        npm: ['git clone https://github.com/yaronn/blessed-contrib', 'cd blessed-control', 'npm install'],
+        Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server validate', 'history', 'ls', 'exit'],
+        Start: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server start'],
+        Help: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server'],
+        Details: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server details'],
+        Validate: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server validate'],
+        Stop: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server stop'],
+        Start: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server start'],
+        Restart: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server restart'],
+        Update: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server update'],
+    },
 };
