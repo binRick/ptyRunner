@@ -39,7 +39,7 @@ module.exports = {
     Commands: {
         test: ['echo hello', 'id', 'ls', 'w'],
         npm: ['/usr/bin/git clone https://github.com/yaronn/blessed-contrib', 'cd blessed-control', 'npm install'],
-        Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server install', 'history', 'ls', 'exit'],
+        Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server auto-install'],
         Start: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server start'],
         Help: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server'],
         Details: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server details'],
