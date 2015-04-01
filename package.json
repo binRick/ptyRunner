@@ -1,0 +1,22 @@
+{
+  "name": "steamInstaller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "chalk": "^1.0.0",
+    "child_pty": "^1.0.0",
+    "inotifywait": "^1.7.0",
+    "monitor-pid": "^1.4.3",
+    "prettyjson": "^1.1.0",
+    "ps-tree": "0.0.3",
+    "pty.js": "^0.2.7",
+    "underscore": "^1.8.2"
+  }
+}
