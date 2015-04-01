@@ -1,5 +1,5 @@
 {
-  "name": "steamInstaller",
+  "name": "ptyRunner",
   "version": "1.0.0",
   "description": "ptyRunner script ideas",
   "main": "index.js",
