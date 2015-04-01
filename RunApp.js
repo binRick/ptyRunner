@@ -11,6 +11,7 @@ var App = process.argv[2] || 'SteamServer',
     Command = process.argv[3] || 'Install',
     Monitor = require('./Monitor');
 
+
 var child = pty.spawn('setuidgid', [Setup.User, Setup.Shell], {
     name: Setup.PtyName || 'myPty',
     cols: Setup.Columns,
