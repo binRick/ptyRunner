@@ -23,8 +23,7 @@ Ended: function(e){
     User: 'arma3server',
     Home: '/home/arma3server',
 Commands: {
-    Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server validate','history','ls','exit'],
-    //Install: ['cd ~','source .bashrc','source .bash_profile','free -m','grep -i hz /proc/cpuinfo','df -h','uname -a','sar -u | tail -n 2','sleep 5','cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server','history','ls','exit'],
+    Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server install'],
     Start: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server start'],
     Help: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server'],
     Details: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server details'],
