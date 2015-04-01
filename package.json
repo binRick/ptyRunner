@@ -1,7 +1,7 @@
 {
   "name": "steamInstaller",
   "version": "1.0.0",
-  "description": "",
+  "description": "ptyRunner script ideas",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +18,10 @@
     "ps-tree": "0.0.3",
     "pty.js": "^0.2.7",
     "underscore": "^1.8.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://raw.githubusercontent.com/binRick/ptyRunner/"
   }
 }
