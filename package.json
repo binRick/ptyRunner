@@ -20,7 +20,8 @@
     "ps-tree": "0.0.3",
     "pty.js": "^0.2.7",
     "terminal-menu": "^2.1.1",
-    "underscore": "^1.8.2"
+    "underscore": "^1.8.2",
+    "yaml-to-json": "^0.3.0"
   },
   "devDependencies": {},
   "repository": {

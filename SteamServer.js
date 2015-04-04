@@ -12,7 +12,7 @@ module.exports = {
         Install: j2y.stringify(JSON.parse(fs.readFileSync('./_SteamServer_Install.json').toString())),
         Test: j2y.stringify(JSON.parse(fs.readFileSync('./_Test.json').toString())),
     },
-    Inventory: ['127.0.0.1', 'steam1', 'steam2'],
+    Inventory: ['127.0.0.1', 'cs', 'arma3'],
     Shell: 'bash',
     Columns: 80,
     Rows: 30,

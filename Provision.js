@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-//var promise = playbook.exec();
-var Ansible = require('./node-ansible'),
+var yaml = require('yaml-to-json').yaml,
+    Ansible = require('node-ansible'),
     pj = require('prettyjson'),
     fs = require('fs');
 SteamServer = require('./SteamServer');
@@ -9,17 +9,19 @@ SteamServer = require('./SteamServer');
 //console.log(SteamServer.Playbooks.Install);
 //process.exit();
 
-var Command = process.argv[2] || '',
-    op = process.argv[3] || 'run';
+var Command = process.argv[3] || '',
+    op = process.argv[4] || 'run';
 
-//
-//
 fs.writeFileSync('./.playbook.yml', SteamServer.Playbooks[Command]);
+
+var pb = yaml.safeLoadAll(fs.readFileSync('./.playbook.yml'));
+
+//console.log(SteamServer.Playbooks[Command].length);
+//console.log(pj.render(SteamServer.Playbooks[Command]));
 fs.writeFileSync('./.inventory', '[steamServers]\n' + SteamServer.Inventory.join('\n'));
+var Options = ['listHosts', 'listTasks', 'listPlaybooks', 'runPlaybook', 'testPlaybook'];
 
-var Options = ['listHosts','listTasks','listPlaybooks','runPlaybook','testPlaybook'];
-
-
+//cat _SteamServer_Install.json | prettyjson
 if (Command == '') {
     console.log('\n' + pj.render({
         Options: Options,
@@ -27,7 +29,9 @@ if (Command == '') {
         inlineArrays: true
     }) + '\n');
     process.exit();
-
+}
+if (Command == 'listHosts') {
+    var promise = new Ansible.Playbook().inventory('.inventory').playbook('.playbook').variables(SteamServer.Variables).verbose(SteamServer.Verbose).listTasks(true).listHosts(true).exec();
 }
 if (Command == 'list') {
     console.log('\n' + pj.render({
@@ -44,7 +48,6 @@ if (op == 'list') {
 
 if (op == 'run') {
     var promise = new Ansible.Playbook().inventory('.inventory').playbook('.playbook').variables(SteamServer.Variables).verbose(SteamServer.Verbose).exec();
-    //var promise = new Ansible.Playbook().inventory('.inventory').playbook('.playbook').variables(SteamServer.Variables).verbose(SteamServer.Verbose).listTasks(true).listHosts(true).exec();
 
 
     promise.then(function(successResult) {
