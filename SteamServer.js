@@ -1,6 +1,7 @@
 var fs = require('fs'),
     j2y = require('json2yaml');
 
+//console.log(process.env); process.exit();
 
 module.exports = {
     Host: '127.0.0.1',
@@ -39,11 +40,16 @@ module.exports = {
     Home: '/home/arma3server',
     Commands: {
         test: ['echo hello', 'id', 'ls', 'w'],
-        npm: ['/usr/bin/git clone https://github.com/yaronn/blessed-contrib', 'cd blessed-control', 'npm install'],
+        //npm: ['/usr/bin/git clone https://github.com/yaronn/blessed-contrib', 'cd blessed-control', 'npm install','for x in browserify express pm2 grunt-cli karama; do npm install $x; done'],
+        //npm: ['/usr/bin/git clone https://github.com/yaronn/blessed-contrib', 'cd blessed-control', 'npm install','for x in browserify express pm2 grunt-cli karama; do npm install $x; done'],
+        npm: ['cd /home/arma3server', 'ls -al node_modules', 'npm install '+process.env.NPMmodule || 'request'], 
         Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server auto-install'],
         Start: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server start'],
         Help: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server'],
-        Details: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server details','netstat -atunp | grep arma3server'],
+//ttyrec ~/.tty.recording && seq2gif < ~/.tty.recording > /var/www/html/wow.gif
+//
+//        Details: ['/usr/bin/ttyrec rec','cd /home/arma3server','source .bashrc', 'ls -al arma3server', 'chmod +x arma3server', './arma3server details','netstat -atunp | grep arma3server','exit','seq2gif < ~/.tty.recording > /var/www/html/wow.gif'],
+        Details: ['cd /home/arma3server','source .bashrc', 'ls -al arma3server', 'chmod +x arma3server', './arma3server details','netstat -atunp | grep arma3server'],
         Validate: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server validate'],
         Stop: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server stop'],
         Start: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server start'],

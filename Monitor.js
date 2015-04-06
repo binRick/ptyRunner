@@ -19,12 +19,13 @@ module.exports = function(Setup, cb) {
         period: Setup.Period
     });
     mp.on('monitored', function(pid, stats) {
-        console.log(c.green('monitored', pid));
+//        console.log(c.green('monitored', pid));
         stats.id = id;
         id++;
         Setup.Stats.push(stats);
  //       console.log('\n' + pj.render(Setup.Lines) + '\n');
-        console.log('\n' + pj.render(Setup.Lines) + '\n');
+ //       console.log('\n' + pj.render(Setup.Lines) + '\n');
+        console.log('\n' + Setup.Lines + '\n');
         console.log('\n' + pj.render({Lines: Setup.Lines.length}) + '');
         console.log('' + pj.render({Respones: Setup.Responses.map(function(r){return r.response;})} , p) + '\n');
  //       console.log('\n' + pj.render('Responses Detected: '  Setup.Respones.length) + '\n');
@@ -37,7 +38,7 @@ module.exports = function(Setup, cb) {
     });
 
     mp.on('end', function(pid) {
-        console.log(c.green('Ended', pid));
+ //       console.log(c.green('Ended', pid));
 Setup.Ended({});
 process.exit();
 

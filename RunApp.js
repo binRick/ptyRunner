@@ -11,12 +11,17 @@ var App = process.argv[2] || 'SteamServer',
     Command = process.argv[3] || 'Install',
     Monitor = require('./Monitor');
 
+var E = process.env;
+E.NPMmodule=process.env.NPMmodule||"request";
 
+E.HOME= Setup.Home;
 var child = pty.spawn('setuidgid', [Setup.User, Setup.Shell], {
     name: Setup.PtyName || 'myPty',
     cols: Setup.Columns,
     rows: Setup.Rows,
     cwd: Setup.Home,
+env: E,
+// {Home:'/home/'+Setup.User,},
 });
 
 Setup.Pid = child.pid;
@@ -53,6 +58,7 @@ async.map(Setup.Commands[Command], function(cmd, cb) {
     });
 }, function(e, outs) {
     child.write('exit\r');
+//console.log(outs);
 });
 /*
 _.each(Setup[Command], function(c){
