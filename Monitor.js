@@ -25,8 +25,8 @@ module.exports = function(Setup, cb) {
         Setup.Stats.push(stats);
  //       console.log('\n' + pj.render(Setup.Lines) + '\n');
  //       console.log('\n' + pj.render(Setup.Lines) + '\n');
-        console.log('\n' + Setup.Lines + '\n');
-        console.log('\n' + pj.render({Lines: Setup.Lines.length}) + '');
+//        console.log('\n' + Setup.Lines + '\n');
+//        console.log('\n' + pj.render({Lines: Setup.Lines.length}) + '');
         console.log('' + pj.render({Respones: Setup.Responses.map(function(r){return r.response;})} , p) + '\n');
  //       console.log('\n' + pj.render('Responses Detected: '  Setup.Respones.length) + '\n');
 //        console.log('\n' + pj.render({PromptResponses:Setup.Responses.length, Respones: Setup.Respones}, p) + '\n');

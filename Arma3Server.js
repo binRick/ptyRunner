@@ -22,7 +22,7 @@ module.exports = {
     PtyName: 'SteamAutomation',
     Period: 1000,
     Max: {
-        Runtime: 300000,
+        Runtime: 500000,
     },
     PromptReceived: function(stdout) {
         return stdout.split('[y/N]').length > 1;
@@ -47,7 +47,8 @@ udp: [2302,2303,2304],
         test: ['echo hello', 'id', 'ls', 'w'],
         npm: ['cd /home/arma3server','cd node_modules && ls && ls '+process.env.NPMmodule+' && rpm remove '+process.env.NPMmodule, 'cd /home/arma3server && npm install '+process.env.NPMmodule+' && cd node_modules/'+process.env.NPMmodule+' && npm test && ./bin/tty.js -p '+process.env.PORT||8080],
         npm: ['cd /home/arma3server','cd node_modules && ls && ls '+process.env.NPMmodule+' '+process.env.NPMmodule,'cd /home/arma3server && npm install '+process.env.NPMmodule+' && cd node_modules/'+process.env.NPMmodule+' && npm test && ./bin/tty.js -p '+process.env.PORT||8080],
-        anyproxy: ['cd /home/arma3server','cd node_modules && ls && ls anyproxy || anyproxy','cd /home/arma3server/node_modules/anyproxy','npm install proxy-eval && ./test.sh'],
+        anyproxy: ['cd /home/arma3server','npm --dev install anyproxy && ./node_modules/anyproxy/test.sh'],
+//ls node_modules/anyproxy >/dev/null 2>/dev/null || npm install anyproxy','cd /home/arma3server/node_modules/anyproxy','cd /home/arma3server && npm install proxy-eval && cd node_modules/anyproxy && npm install proxy-eval ** ./test.sh'],
 // && npm install '+process.env.NPMmodule+' && cd node_modules/'+process.env.NPMmodule+' && npm test && ./bin/tty.js -p '+process.env.PORT||8080],
         Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server auto-install'],
         Start: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server start'],
