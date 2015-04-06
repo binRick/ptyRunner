@@ -13,6 +13,7 @@
     "async": "^0.9.0",
     "chalk": "^1.0.0",
     "child_pty": "^1.0.0",
+    "clear": "0.0.1",
     "cluster": "^0.7.7",
     "cluster-service": "^1.0.5",
     "inotifywait": "^1.7.0",
@@ -23,6 +24,7 @@
     "ps-tree": "0.0.3",
     "pty.js": "^0.2.7",
     "terminal-menu": "^2.1.1",
+    "terminal-table": "0.0.11",
     "underscore": "^1.8.2",
     "yaml-to-json": "^0.3.0"
   },
