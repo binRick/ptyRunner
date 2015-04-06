@@ -20,7 +20,6 @@ module.exports = function(Columns, Rows, Attrs, Interval) {
         });
 
         _.each(Attrs, function(a) {
-
             //       t.attrRange(a);
         });
 
