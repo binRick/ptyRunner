@@ -2,14 +2,15 @@ var MonitorPid = require('monitor-pid');
 
 var pj = require('prettyjson'),
     c = require('chalk'),
-    killProcess = require('./killProcess');
+    killProcess = require('./killProcess'),
+    clear = require('clear');
 
 
 p = {
-//  keysColor: 'white',
-//  dashColor: 'magenta',
-//  stringColor: 'white',
-inlineArrays: true,
+    //  keysColor: 'white',
+    //  dashColor: 'magenta',
+    //  stringColor: 'white',
+    inlineArrays: true,
 };
 
 module.exports = function(Setup, cb) {
@@ -19,28 +20,46 @@ module.exports = function(Setup, cb) {
         period: Setup.Period
     });
     mp.on('monitored', function(pid, stats) {
-//        console.log(c.green('monitored', pid));
+        clear();
+        //        console.log(c.green('monitored', pid));
         stats.id = id;
         id++;
         Setup.Stats.push(stats);
- //       console.log('\n' + pj.render(Setup.Lines) + '\n');
- //       console.log('\n' + pj.render(Setup.Lines) + '\n');
-//        console.log('\n' + Setup.Lines + '\n');
-//        console.log('\n' + pj.render({Lines: Setup.Lines.length}) + '');
-        console.log('' + pj.render({Respones: Setup.Responses.map(function(r){return r.response;})} , p) + '\n');
- //       console.log('\n' + pj.render('Responses Detected: '  Setup.Respones.length) + '\n');
-//        console.log('\n' + pj.render({PromptResponses:Setup.Responses.length, Respones: Setup.Respones}, p) + '\n');
-//        console.log('\n' + pj.render({Responses:Setup.Responses}, p) + '\n');
+        //       console.log('\n' + pj.render(Setup.Lines) + '\n');
+        //       console.log('\n' + pj.render(Setup.Lines) + '\n');
+        //        console.log('\n' + Setup.Lines + '\n');
+        //        console.log('\n' + pj.render({Lines: Setup.Lines.length}) + '');
+        console.log('' + pj.render({
+            Respones: Setup.Responses.map(function(r) {
+                return r.response;
+            })
+        }, p) + '\n');
+        //       console.log('\n' + pj.render('Responses Detected: '  Setup.Respones.length) + '\n');
+        //        console.log('\n' + pj.render({PromptResponses:Setup.Responses.length, Respones: Setup.Respones}, p) + '\n');
+        //        console.log('\n' + pj.render({Responses:Setup.Responses}, p) + '\n');
 
 
 
-        console.log('\n' + pj.render({date: stats.date, pids: stats.pids,cpu:stats['%CPU'], memPercent: stats['%MEM'], polls: stats.id, monitorTime: stats.monit_time, minorFaultsperSec: stats['minflt/s'], time: stats.time, timelimit: Setup.Max.Runtime,  io: [ stats['kB_rd/s'], stats['kB_wr/s'] ], mem: stats.VSZ, rss: stats.RSS}, p) + '\n\n');
+        console.log('\n' + pj.render({
+            date: stats.date,
+            pids: stats.pids,
+            cpu: stats['%CPU'],
+            memPercent: stats['%MEM'],
+            polls: stats.id,
+            monitorTime: stats.monit_time,
+            minorFaultsperSec: stats['minflt/s'],
+            time: stats.time,
+            timelimit: Setup.Max.Runtime,
+            io: [stats['kB_rd/s'], stats['kB_wr/s']],
+            mem: stats.VSZ,
+            rss: stats.RSS
+        }, p) + '\n\n');
     });
 
     mp.on('end', function(pid) {
- //       console.log(c.green('Ended', pid));
-Setup.Ended({});
-process.exit();
+        //       console.log(c.green('Ended', pid));
+        Setup.Ended({});
+        process.exit();
 
 
     });

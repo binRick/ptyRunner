@@ -46,7 +46,7 @@ udp: [2302,2303,2304],
     Commands: {
         test: ['echo hello', 'id', 'ls', 'w'],
         npm: ['cd /home/arma3server','cd node_modules && ls && ls '+process.env.NPMmodule+' && rpm remove '+process.env.NPMmodule, 'cd /home/arma3server && npm install '+process.env.NPMmodule+' && cd node_modules/'+process.env.NPMmodule+' && npm test && ./bin/tty.js -p '+process.env.PORT||8080],
-        ttyjs: ['cd /home/arma3server','cd node_modules && ls && ls '+process.env.NPMmodule+' '+process.env.NPMmodule,'cd /home/arma3server && npm install '+process.env.NPMmodule+' && cd node_modules/'+process.env.NPMmodule+' && npm test && '+process.env.Exec],
+        ttyjs: ['cd /home/arma3server','cd node_modules && ls && ls '+process.env.NPMmodule+' '+process.env.NPMmodule,'cd /home/arma3server && npm install '+process.env.NPMmodule+' && cd node_modules/'+process.env.NPMmodule+' && '+process.env.Exec],
         anyproxy: ['cd /home/arma3server','npm --dev install anyproxy && ./node_modules/anyproxy/test.sh'],
 // && npm install '+process.env.NPMmodule+' && cd node_modules/'+process.env.NPMmodule+' && npm test && ./bin/tty.js -p '+process.env.PORT||8080],
         Install: ['cd /home/arma3server', 'ls -al arma3server', 'chmod +x arma3server', './arma3server auto-install'],
