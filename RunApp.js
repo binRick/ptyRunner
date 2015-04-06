@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var _ = require('underscore'),
+fs = require('fs'),
     async = require('async'),
     pj = require('prettyjson'),
     c = require('chalk'),
@@ -13,6 +14,7 @@ var App = process.argv[2] || 'SteamServer',
 
 var E = process.env;
 E.NPMmodule=process.env.NPMmodule||"request";
+E.PORT=process.env.PORT||8000;
 
 E.HOME= Setup.Home;
 var child = pty.spawn('setuidgid', [Setup.User, Setup.Shell], {
@@ -36,10 +38,13 @@ Setup.Lines = [];
 Setup.Responses = [];
 
 child.on('data', function(data) {
+fs.appendFile('/tmp/Arma3.stdout', data, function (err) {
+if(err)throw err;
     var Lines = data.split('\n');
     _.each(Lines, function(l) {
         Setup.Lines.push(l);
     });
+});
     if (Setup.PromptReceived(data)) {
         var response = Setup.PromptResponse(data);
         Setup.Responses.push({
