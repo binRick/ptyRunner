@@ -14,6 +14,6 @@ Attrs.push({
 
 var Rows = [];
 Rows.push(["✓", "Arma3Server", "arma3server", "tty.js", "xxxx", "xxx"]);
-Rows.push(["x", "Arma3Server", "arma3server", "tty.js", "xxxx", "xxx"]);
+//Rows.push(["x", "Arma3Server", "arma3server", "tty.js", "xxxx", "xxx"]);
 
 Tabular(Cols, Rows, Attrs, 3000);

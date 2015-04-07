@@ -15,12 +15,16 @@ p = {
 
 module.exports = function(Setup, cb) {
     var id = 0;
+
+    cb.Cleared = cb.Cleared || function() {};
+
     Setup.Stats = [];
     var mp = new MonitorPid(Setup.Pid, {
         period: Setup.Period
     });
     mp.on('monitored', function(pid, stats) {
         clear();
+        cb.Cleared();
         //        console.log(c.green('monitored', pid));
         stats.id = id;
         id++;
@@ -37,11 +41,12 @@ module.exports = function(Setup, cb) {
         //       console.log('\n' + pj.render('Responses Detected: '  Setup.Respones.length) + '\n');
         //        console.log('\n' + pj.render({PromptResponses:Setup.Responses.length, Respones: Setup.Respones}, p) + '\n');
         //        console.log('\n' + pj.render({Responses:Setup.Responses}, p) + '\n');
-
+        var FILES = [];
 
 
         console.log('\n' + pj.render({
             date: stats.date,
+            Files: FILES,
             pids: stats.pids,
             cpu: stats['%CPU'],
             memPercent: stats['%MEM'],
