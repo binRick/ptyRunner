@@ -33,15 +33,17 @@ module.exports = function(Setup, cb) {
         //       console.log('\n' + pj.render(Setup.Lines) + '\n');
         //        console.log('\n' + Setup.Lines + '\n');
         //        console.log('\n' + pj.render({Lines: Setup.Lines.length}) + '');
-        console.log('' + pj.render({
-            Respones: Setup.Responses.map(function(r) {
-                return r.response;
-            })
-        }, p) + '\n');
+ //       console.log('' + pj.render({
+ //           Respones: Setup.Responses.map(function(r) {
+ //               return r.response;
+ //           })
+ //       }, p) + '\n');
         //       console.log('\n' + pj.render('Responses Detected: '  Setup.Respones.length) + '\n');
         //        console.log('\n' + pj.render({PromptResponses:Setup.Responses.length, Respones: Setup.Respones}, p) + '\n');
         //        console.log('\n' + pj.render({Responses:Setup.Responses}, p) + '\n');
         var FILES = [];
+Setup.Max = Setup.Max || {};
+Setup.Max.Runtime = Setup.Max.Runtime || 300;
 
 
         console.log('\n' + pj.render({

@@ -6,3 +6,6 @@ http.createServer(function (req, res) {
   res.end('Hello World\n');
 }).listen(1337, '0.0.0.0');
 console.log('Server running at http://0.0.0.0:1337/');
+setTimeout(function(){
+//process.exit();
+},2000);

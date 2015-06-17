@@ -2,8 +2,8 @@ var Table = require("terminal-table"),
     clear = require('clear'),
     _ = require('underscore');
 
-var multimeter = require('multimeter');
-var multi = multimeter(process);
+/*var multimeter = require('multimeter');
+//var multi = multimeter(process);
 
 multi.drop(function (bar) {
     var iv = setInterval(function () {
@@ -13,7 +13,7 @@ multi.drop(function (bar) {
         if (p >= 100) clearInterval(iv);
     }, 25);
 });
-
+*/
 
 module.exports = function(Columns, Rows, Attrs, Interval) {
 
@@ -21,7 +21,8 @@ module.exports = function(Columns, Rows, Attrs, Interval) {
         var t = new Table({
             borderStyle: 2,
             horizontalLine: true,
-            width: [3, "10%", "10%", "10%", "10%", "10%"],
+//            width: [3, "10%", "10%", "10%", "10%", "10%"],
+              width: [10, "50%", "50%"],
             rightPadding: 0,
             leftPadding: 1
         });
