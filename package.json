@@ -19,6 +19,7 @@
     "clear": "0.0.1",
     "cluster": "^0.7.7",
     "cluster-service": "^1.0.5",
+    "commander": "^2.8.1",
     "execSync": "^1.0.2",
     "gauge": "^1.2.0",
     "inotifywait": "^1.7.0",
@@ -43,7 +44,8 @@
     "underscore": "^1.8.2",
     "util": "^0.10.3",
     "watch": "^0.16.0",
-    "yaml-to-json": "^0.3.0"
+    "yaml-to-json": "^0.3.0",
+    "zfs": "file:zfs"
   },
   "devDependencies": {},
   "repository": {
